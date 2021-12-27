@@ -30,6 +30,4 @@ def loginpage(request):
 				error = "yes"
 		except Exception as e:
 			error = "yes"
-			#print(e)
-			#raise e
 	return render(request,'login.html')
