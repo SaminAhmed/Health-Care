@@ -26,15 +26,10 @@ def Login_admin(request):
 			error = "yes"
 	d = {'error' : error}
 	return render(request,'adminlogin.html',d)
-
-
-
-
-def Logout(request):
-	if not request.user.is_active:
-		return redirect('loginpage')
-	logout(request)
-	return redirect('loginpage')
+def AdminHome(request):
+	if not request.user.is_staff:
+		return redirect('login_admin')
+	return render(request,'adminhome.html')
 
 def Logout_admin(request):
 	if not request.user.is_staff:
