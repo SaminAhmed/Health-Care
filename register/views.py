@@ -4,7 +4,7 @@ from .models import *
 from django.contrib.auth import authenticate,logout,login
 from django.utils import timezone
 
-# Create your views here.
+
 def homepage(request):
 	return render(request,'index.html')
 
@@ -47,7 +47,6 @@ def createaccountpage(request):
 		except Exception as e:
 			error = "yes"
 			#print("Error:",e)
-	d = {'error' : error}
-	#print(error)
-	return render(request,'createaccount.html',d)
-	#return render(request,'createaccount.html')
+	f = {'error' : error}
+	return render(request,'createaccount.html',f)
+	
