@@ -39,11 +39,11 @@ def adminaddDoctor(request):
 				error = "yes"
 		except Exception as e:
 			error = "yes"
-	d = {'error' : error}
-	return render(request,'adminadddoctor.html',d)
+	f = {'error' : error}
+	return render(request,'adminadddoctor.html',f)
 	
 def AdminHome(request):
-	#after login user comes to this page.
+	
 	if not request.user.is_staff:
 		return redirect('login_admin')
 	return render(request,'adminhome.html')
