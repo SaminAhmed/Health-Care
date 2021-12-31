@@ -31,3 +31,10 @@ def loginpage(request):
         except Exception as e:
             error = "yes"
     return render(request, 'login.html')
+
+
+def Logout(request):
+	if not request.user.is_active:
+		return redirect('loginpage')
+	logout(request)
+	return redirect('loginpage')
