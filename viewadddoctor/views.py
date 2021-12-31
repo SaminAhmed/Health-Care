@@ -10,8 +10,8 @@ def adminviewDoctor(request):
 	if not request.user.is_staff:
 		return redirect('login_admin')
 	doc = Doctor.objects.all()
-	d = { 'doc' : doc }
-	return render(request,'adminviewDoctors.html',d)
+	f = { 'doc' : doc }
+	return render(request,'adminviewDoctors.html',f)
 	
 def admin_delete_doctor(request,pid,email):
 	if not request.user.is_staff:
@@ -23,9 +23,9 @@ def admin_delete_doctor(request,pid,email):
 	return redirect('adminviewDoctor')
 
 def AdminHome(request):
-	#after login user comes to this page.
+	
 	if not request.user.is_staff:
 		return redirect('login_admin')
 	return render(request,'adminhome.html')
 
-# Create your views here.
+
