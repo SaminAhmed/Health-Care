@@ -14,9 +14,9 @@ def loginpage(request):
 	error = ""
 	page = ""
 	if request.method == 'POST':
-		u = request.POST['email']
-		p = request.POST['password']
-		user = authenticate(request,username=u,password=p)
+		user = request.POST['email']
+		pass = request.POST['password']
+		user = authenticate(request,username=user,password=pass)
 		try:
 			if user is not None:
 				login(request,user)
