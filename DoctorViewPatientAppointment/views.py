@@ -21,4 +21,4 @@ def viewappointments(request):
 		previous_appointments = Appointment.objects.filter(doctoremail=request.user,appointmentdate__lt=timezone.now()).order_by('-appointmentdate') | Appointment.objects.filter(doctoremail=requsest.user,status=False).order_by('-appointmentdate')
 		
 		data = { "upcomming_appointments" : upcomming_appointments, "previous_appointments" : previous_appointments }
-		return render(request,'doctorviewappointment.html',d)
+		return render(request,'doctorviewappointment.html',data)
